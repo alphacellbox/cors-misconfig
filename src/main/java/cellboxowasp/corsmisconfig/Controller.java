@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    @RequestMapping(value = {"/{a}"}, method = RequestMethod.GET)
+   // @RequestMapping(value = {"/{a}"}, method = RequestMethod.GET)
+    @RequestMapping("/")
      public String all(@PathVariable String a){
         System.out.println("aaaaaaaaaaaaa");
         return "hiiiiiiiiiiiiiiiiiiii";
