@@ -11,7 +11,7 @@ public class Controller {
     @RequestMapping("/")
      public String all(){
         System.out.println("aaaaaaaaaaaaa");
-        return "cellbox222222222";
+        return "cellbox3333333";
     }
 
 
