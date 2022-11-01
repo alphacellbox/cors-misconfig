@@ -10,7 +10,7 @@ public class Controller {
 
    // @RequestMapping(value = {"/{a}"}, method = RequestMethod.GET)
     @RequestMapping("/")
-     public String all(@PathVariable String a){
+     public String all(){
         System.out.println("aaaaaaaaaaaaa");
         return "hiiiiiiiiiiiiiiiiiiii";
     }
