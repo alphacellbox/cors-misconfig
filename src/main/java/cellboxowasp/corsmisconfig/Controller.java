@@ -1,18 +1,17 @@
 package cellboxowasp.corsmisconfig;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Controller {
 
    // @RequestMapping(value = {"/{a}"}, method = RequestMethod.GET)
+
+    @CrossOrigin(value ="http://127.0.0.1:5500")
     @RequestMapping("/")
      public String all(){
         System.out.println("aaaaaaaaaaaaa");
-        return "cellbox";
+        return "cellbox111111111111";
     }
 
 
