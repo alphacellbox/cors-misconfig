@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Posts</title>
+    <div th:replace="fragment/layout::head"></div>
+</head>
+<body class="">
+
+<div th:replace="fragment/layout::header"></div>
+
+<div class="container-fluid m-0 p-4">
+
+    <a th:href="@{/posts/register}" class="mb-2 btn btn-primary" style="width: 100px">
+        NEW
+    </a>
+
+
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Categories</th>
+            <th scope="col">Created By</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Test Title</td>
+            <td>Varzeshi</td>
+            <td>Hatef</td>
+            <td>2019-08-01 12:00</td>
+            <td>
+                <a class="btn btn-success" href="#" style="width: 80px">Edit</a>
+                <a class="btn btn-danger" href="#" style="width: 80px">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Test Title 2</td>
+            <td>Farhangi</td>
+            <td>Ali</td>
+            <td>2019-08-04 22:00</td>
+            <td>
+                <a class="btn btn-success" href="#" style="width: 80px">Edit</a>
+                <a class="btn btn-danger" href="#" style="width: 80px">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+</body></html>

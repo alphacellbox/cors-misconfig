@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Home</title>
+    <div th:replace="fragment/layout::head"></div>
+</head>
+<body>
+
+<div th:replace="fragment/layout::header"></div>
+
+<div class="container-fluid mt-3 pl-5 pr-5" style="background-color: gray">
+
+    <a class="text-dark" href="#" th:each="post : ${posts}">
+        <div class="card mr-3 mb-4" style="width: 17rem; float: left; ">
+            <img alt="Card image cap" class="card-img-top border-bottom border-secondary"
+                 style="width: 16.8rem; height: 16rem; object-fit: contain; margin: auto;"
+                 th:src="'/img/' + ${post.getCover()}">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${post.getTitle()}"></h5>
+                <p class="card-text text-truncate" th:text="${post.getBody()}">
+                </p>
+            </div>
+            <div class="card-footer">
+                <p class="text-center small text-muted m-0 p-0" th:text="'Last Update : ' +
+                 ${#temporals.format(post.getUpdatedAt(),'yyyy-MM-dd HH:mm')}"></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+</body>
+</html>
