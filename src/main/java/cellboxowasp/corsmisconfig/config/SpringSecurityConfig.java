@@ -17,10 +17,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource);
-                //.passwordEncoder(new BCryptPasswordEncoder())
-                //.usersByUsernameQuery("select email,password,enabled from users_tbl where email=?")
-                //.authoritiesByUsernameQuery("select email from authorities where email=?");
+        auth.jdbcAuthentication().dataSource(dataSource)
+                .passwordEncoder(new BCryptPasswordEncoder())
+                .usersByUsernameQuery("select email,password,enabled from users where email=?")
+                .authoritiesByUsernameQuery("select email,roles from authorities where email=?");
     }
 
     @Override
@@ -29,10 +29,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/users/register","/index", "/css/**", "/js/**", "/img/**")
                 .permitAll()
-             //   .antMatchers("/users/**","/categories/**")
-             //   .hasAuthority("ADMIN")
-           //     .antMatchers("/posts/**")
-           //     .hasAnyAuthority("ADMIN","USER")
+//                .antMatchers("/users/**","/categories/**")
+//                .hasAuthority("ADMIN")
+//                .antMatchers("/posts/**")
+//                .hasAnyAuthority("ADMIN","USER")
                 .anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/login").usernameParameter("email")

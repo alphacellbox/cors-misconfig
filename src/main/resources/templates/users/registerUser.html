@@ -37,16 +37,16 @@
             </div>
         </div>
 
-<!--        <div class="form-group row">-->
-<!--            <label class="col-form-label col-sm-3" for="cat">Categories : </label>-->
-<!--            <div class="col-sm-9">-->
-<!--&lt;!&ndash;                <select class="selectpicker" id="cat" multiple th:field="*{roles}">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <option th:each="role : ${T(ir.arcademy.blog.enums.Roles).values()}"&ndash;&gt;-->
-<!--&lt;!&ndash;                    th:text="${role}"&ndash;&gt;-->
-<!--&lt;!&ndash;                    th:value="${role}"></option>&ndash;&gt;-->
-<!--&lt;!&ndash;                </select>&ndash;&gt;-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="form-group row">
+            <label class="col-form-label col-sm-3" for="cat">Categories : </label>
+            <div class="col-sm-9">
+                <select class="selectpicker" id="cat" multiple th:field="*{roles}">
+                    <option th:each="role : ${T(cellboxowasp.corsmisconfig.enums.Roles).values()}"
+                    th:text="${role}"
+                    th:value="${role}"></option>
+                </select>
+            </div>
+        </div>
 
 
         <div class="form-group row">

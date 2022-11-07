@@ -1,5 +1,6 @@
 package cellboxowasp.corsmisconfig.modules.users.model;
 
+import cellboxowasp.corsmisconfig.enums.Roles;
 import cellboxowasp.corsmisconfig.modules.posts.model.Posts;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "users_tbl")
+@Table(name = "users")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Users implements Serializable {
 
@@ -31,11 +32,11 @@ public class Users implements Serializable {
 
     private boolean enabled = true;
 
-//    @ElementCollection(targetClass = Roles.class)
-//    @CollectionTable(name = "authorities", joinColumns =
-//    @JoinColumn(name = "email", referencedColumnName = "email"))
-//    @Enumerated(EnumType.STRING)
-//    private List<Roles> roles;
+    @ElementCollection(targetClass = Roles.class)
+    @CollectionTable(name = "authorities", joinColumns =
+    @JoinColumn(name = "email", referencedColumnName = "email"))
+    @Enumerated(EnumType.STRING)
+    private List<Roles> roles;
 
     @OneToMany(mappedBy = "users")
     private List<Posts> posts;
@@ -79,13 +80,13 @@ public class Users implements Serializable {
         this.enabled = enabled;
     }
 
-//    public List<Roles> getRoles() {
-//        return roles;
-//    }
-//
-//    public void setRoles(List<Roles> roles) {
-//        this.roles = roles;
-//    }
+    public List<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Roles> roles) {
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;
