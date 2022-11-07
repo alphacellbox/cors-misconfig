@@ -33,11 +33,11 @@ public class Users implements Serializable {
 
     private boolean enabled = true;
 
-    @ElementCollection(targetClass = Roles.class)
-    @CollectionTable(name = "authorities", joinColumns =
-    @JoinColumn(name = "email", referencedColumnName = "email"))
-    @Enumerated(EnumType.STRING)
-    private List<Roles> roles;
+//    @ElementCollection(targetClass = Roles.class)
+//    @CollectionTable(name = "authorities", joinColumns =
+//    @JoinColumn(name = "email", referencedColumnName = "email"))
+//    @Enumerated(EnumType.STRING)
+//    private List<Roles> roles;
 
     @OneToMany(mappedBy = "users")
     private List<Posts> posts;
@@ -81,13 +81,13 @@ public class Users implements Serializable {
         this.enabled = enabled;
     }
 
-    public List<Roles> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Roles> roles) {
-        this.roles = roles;
-    }
+//    public List<Roles> getRoles() {
+//        return roles;
+//    }
+//
+//    public void setRoles(List<Roles> roles) {
+//        this.roles = roles;
+//    }
 
     public Long getId() {
         return id;

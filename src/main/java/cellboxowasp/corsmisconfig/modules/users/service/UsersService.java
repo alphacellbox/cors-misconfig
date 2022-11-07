@@ -3,7 +3,7 @@ package cellboxowasp.corsmisconfig.modules.users.service;
 
 import cellboxowasp.corsmisconfig.MyBeanCopy;
 import cellboxowasp.corsmisconfig.modules.users.model.Users;
-import cellboxowasp.corsmisconfig.modules.users.repository.UsersRepository;
+import cellboxowasp.corsmisconfig.modules.users.model.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

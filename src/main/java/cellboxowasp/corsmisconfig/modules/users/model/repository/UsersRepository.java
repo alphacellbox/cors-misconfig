@@ -1,4 +1,4 @@
-package cellboxowasp.corsmisconfig.modules.users.repository;
+package cellboxowasp.corsmisconfig.modules.users.model.repository;
 
 
 import cellboxowasp.corsmisconfig.modules.users.model.Users;
