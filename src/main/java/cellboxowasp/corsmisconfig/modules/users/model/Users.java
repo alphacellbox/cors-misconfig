@@ -1,7 +1,5 @@
 package cellboxowasp.corsmisconfig.modules.users.model;
 
-
-import cellboxowasp.corsmisconfig.enums.Roles;
 import cellboxowasp.corsmisconfig.modules.posts.model.Posts;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;

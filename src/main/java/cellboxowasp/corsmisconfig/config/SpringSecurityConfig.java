@@ -17,17 +17,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource)
-                .passwordEncoder(new BCryptPasswordEncoder())
-                .usersByUsernameQuery("select email,password,enabled from users_tbl where email=?")
-                .authoritiesByUsernameQuery("select email,roles from authorities where email=?");
+        auth.jdbcAuthentication().dataSource(dataSource);
+                //.passwordEncoder(new BCryptPasswordEncoder())
+                //.usersByUsernameQuery("select email,password,enabled from users_tbl where email=?")
+                //.authoritiesByUsernameQuery("select email from authorities where email=?");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/users/register","/index", "/css/**", "/js/**", "/img/**")
+                .antMatchers("/**", "/users/register","/index", "/css/**", "/js/**", "/img/**")
                 .permitAll()
              //   .antMatchers("/users/**","/categories/**")
              //   .hasAuthority("ADMIN")
