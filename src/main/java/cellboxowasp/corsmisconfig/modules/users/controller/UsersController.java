@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 @Controller
+@CrossOrigin(origins = "*",allowCredentials = "true")
 @RequestMapping("/users")
 public class UsersController {
 
